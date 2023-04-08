@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="danhmuc.css">
+    <link href='https://css.gg/search.css' rel='stylesheet'>
+    <link href='https://css.gg/search.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./assets/css/owl.theme.default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body style="margin: 0px;">
+    <div class="wrap">
+        <div class="header">
+            <div class="header_content">
+                <div class="header_name">
+                    <h1 class="title" id="FOOD.vn"> <a href="../index.html">
+                            <img src="https://www.library.dartmouth.edu/themes/custom/bootstrap_dcl/dartmouth-library-logo-square.png"
+                                alt="">
+                        </a></h1>
+                </div>
+                <div class="header_item">
+                    <ul class="header_item_list">
+                        <a href="/" class="item_link">
+                            <li class="item">TRANG CHỦ</li>
+                        </a>
+                        <a href="./danhsachbooks.html?vuaramat=1" class="item_link">
+                            <li class="item">VỪA RA MẮT</li>
+                        </a>
+
+                        <a href="./danhsachbooks.html?docnhieu=1" class="item_link">
+                            <li class="item">ĐỌC NHIỀU NHẤT</li>
+                        </a>
+                        <a href="" class="item_link">
+
+                            <li class="item">
+                                <select name="" id="" class="item_selection">
+                                    <option value="" class="item_selcetion_option">GÓC REVIEW</option>
+
+                                </select>
+                            </li>
+                        </a>
+
+                    </ul>
+                </div>
+                <div class="sign_in">
+                    <ul class="two_item">
+                        <li id="dangnhap" class="dn" style="margin-right: 25px; list-style: none;"><a href=""
+                                class="dndk_link" style="color: white;">Đăng nhập</a></li>
+                        <li class="dk" style="margin-right: 25px; list-style: none;"><a href="" class="dndk_link"
+                                style="color: white;">Đăng kí</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="container_colums">
+                <div class="menu">
+                    <form action="./danhsachbooks.html" method="get">
+                        <div class="input_set">
+                            <input type="text" name="search" id="" class="input" placeholder="Tìm kiếm">
+                            <button class="search" type="submit">
+                                <i class="gg-search" style="margin-left: 3p\x;"></i>
+                            </button>
+                        </div>
+                    </form>
+                    <div class="menu_colums">
+                        <h3 class="Danhmuc">DANH MỤC</h3>
+                        <ul class="menu_colums_item list_danhmuc">
+
+                            <script>
+                                const listCate = document.querySelector('.list_danhmuc');
+                                const categorys = JSON.parse(localStorage.getItem('categorys'))
+                                categorys.map((item, index) => {
+                                    const newDiv = document.createElement("li");
+                                    newDiv.classList.add('menu_item');
+                                    newDiv.setAttribute('keys', index)
+                                    newDiv.innerHTML += `
+                                     <a href="../DanhMuc/danhsachbooks.html?categoryID=${item.id}" 
+                                        class="menu_link">${item.name}</a>`;
+                                    console.log(newDiv)
+                                    listCate.appendChild(newDiv)
+                                })
+                            </script>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <div class="container_it">
+                <div class="container1">
+                    <Strong id="title_danhmuc" class="dexuat " style="color: white;"></Strong>
+                </div>
+                <div class="container_2">
+                    <div class="container_main2 list_books">
+                    </div>
+                    <script src="../DanhMuc/library.js"></script>
+                    <script>
+                        const vuaramat = (parseURLParams(window.location.href).vuaramat)
+                        const docnhieu = (parseURLParams(window.location.href).docnhieu)
+                        const search = (parseURLParams(window.location.href).search)
+
+                        const categoryID = parseInt((parseURLParams(window.location.href).categoryID));
+                        const data = JSON.parse(localStorage.getItem('products'))
+                        let results;
+                        if (categoryID) {
+                            results = data.filter((item) => {
+                                if (categoryID) {
+                                    return item.categoryID == categoryID
+                                }
+                            })
+                            const Cate = categorys.find((item) => {
+                                if (item.id === categoryID) {
+                                    return item
+                                }
+                            })
+                            document.title = Cate.name
+                            document.getElementById("title_danhmuc").append(Cate.name)
+                        }
+                        else if (vuaramat) {
+                            document.getElementById("title_danhmuc").append("Vừa ra mắt")
+                            results = data.filter((item) => {
+                                if (item.vuaramat == true)
+                                    return item
+                            })
+                            const Cate = categorys.find((item) => {
+                                if (item.id === categoryID) {
+                                    return item
+                                }
+                            })
+
+                        }
+                        else if (docnhieu) {
+                            document.getElementById("title_danhmuc").append("Đọc nhiều nhất")
+                            results = data.filter((item) => {
+                                if (item.docnhieu == true)
+                                    return item
+                            })
+                            const Cate = categorys.find((item) => {
+                                if (item.id === categoryID) {
+                                    return item
+                                }
+                            })
+
+                        }
+                        else if (search) {
+                            document.getElementById("title_danhmuc").append("Kết quả tìm kiếm")
+                            results = data.filter((item) => {
+                                if (item.name.toLowerCase().includes(search))
+                                    return item
+                            })
+                            const Cate = categorys.find((item) => {
+                                if (item.id === categoryID) {
+                                    return item
+                                }
+                            })
+
+                        }
+                        const listBooks = document.querySelector('.list_books');
+                        results.map((item, index) => {
+                            const newDiv = document.createElement("div");
+                            newDiv.classList.add('item_book');
+                            newDiv.setAttribute('keys', index)
+                            newDiv.innerHTML += `
+                        <a href="../detail/detail_book.html?id=${item.id}" class="container_main2_link"> <img class="img1"
+                                src="${item.img}"
+                                alt="">
+                            <p class="tenmonan">${item.name}</p>
+                        </a>`;
+                            listBooks.appendChild(newDiv)
+                        })
+                    </script>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="comment">
+            <div class="nd_comment">
+                <strong class="" style="font-size: 1.5rem;">Bình luận:</strong>
+            </div>
+            <div class="input_comment">
+                <input type="text" class="ip" placeholder="Viết bình luận...">
+            </div>
+            <div class="huy">
+                <button class="nuthuy">Hủy</button>
+                <button class="nutcm">Bình luận</button>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer_content">
+                <div class="khampha">
+                    <p class="khampha_title" id="lienhe">Khám phá</p>
+                </div>
+                <div class="khampha_content">
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Ứng dụng Mobile</a></li>
+                    </ul>
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Viết bình luận</a></li>
+                    </ul>
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Tạo bộ sưu tập</a></li>
+                    </ul>
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Phần thưởng</a></li>
+                    </ul>
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Bảo mật thông tin</a></li>
+                    </ul>
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Quy định</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer_content2">
+                <div class="khampha">
+                    <p class="khampha_title">Công ty
+                    </p>
+                </div>
+                <div class="khampha_content">
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Giới thiệu
+                            </a></li>
+                    </ul>
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Trợ giúp</a></li>
+                    </ul>
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Việc làm</a></li>
+                    </ul>
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Góp ý</a></li>
+                    </ul>
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Quy chế</a></li>
+                    </ul>
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Liên hệ</a></li>
+                    </ul>
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Thỏa thuận sử dụng dịch vụ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer_content3">
+                <div class="khampha">
+                    <p class="khampha_title">Tham gia trên</p>
+                </div>
+                <div class="khampha_content">
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Facebook</a></li>
+                    </ul>
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Instagram</a></li>
+                    </ul>
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Youtube</a></li>
+                    </ul>
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Google</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer_content4">
+                <div class="khampha">
+                    <p class="khampha_title">Ứng dụng</p>
+                </div>
+                <div class="khampha_content">
+                    <div class="app_link">
+                        <div>
+                            <a href="" class="link_appstore">
+                                <img style="width: 100px; height: 34px;"
+                                    src="https://www.nicepng.com/png/full/235-2356931_published-inapp-google-play-logo-and-app-store.png"
+                                    alt="" class="appstore">
+                            </a>
+                        </div>
+                        <div style="margin-top: 10px;">
+                            <a href="" class="link_chplay">
+                                <img style="width: 100px;"
+                                    src="https://www.pngkit.com/png/full/6-67536_download-google-play-png-picture-freeuse-library-google.png"
+                                    alt="" class="chplay">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function () {
+        $(".owl-carousel").owlCarousel({
+            items: 2,
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 4000,
+        });
+    });
+</script>
+<script src="../DanhMuc/data.js"></script>
+
+</html>

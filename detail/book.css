@@ -1,0 +1,401 @@
+.wrap {
+    /* width: max-content; */
+    margin: auto;
+    background-color: white;
+}
+
+.title {
+    font-size: 3rem;
+    color: white;
+    height: 101px;
+    width: 150px;
+    margin: 0;
+}
+.title img{
+    width: 140px;
+    height: 100px;
+}
+
+.header_name {
+    margin-left: 100px;
+}
+
+.header_item {
+    margin-left: auto;
+}
+
+.header_content {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(26, 189, 121);
+
+}
+
+.header_item_list {
+    display: flex;
+    padding-top: 25px;
+}
+
+.item {
+    margin: 0 20px;
+    padding: 20px 20px 0 0;
+    list-style: none;
+    color: white;
+}
+
+.item_link {
+    text-decoration: none;
+}
+
+.header_item {
+    padding-right: 50px;
+}
+
+.two_item {
+    display: flex;
+    margin-top: 57px;
+}
+
+.dndk_link {
+    text-decoration: none;
+}
+
+.menu_item {
+    list-style: none;
+    margin: 30px 0;
+}
+
+.menu_link {
+    text-decoration: none;
+    /* font-size: 1.3rem; */
+    position: relative;
+    transition: right linear 0.1s;
+}
+
+.menu_link:hover {
+    color: rgb(127, 231, 86);
+    right: -4px;
+}
+
+.container {
+    margin-top: 50px;
+    display: flex;
+}
+
+.container_colums {
+    display: flex;
+}
+
+.input {
+    margin-left: 100px;
+    width: 200px;
+    height: 30px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.menu_colums {
+    border: 2px solid;
+    border-bottom: 20px solid;
+    margin-left: 100px;
+    box-shadow: 0px -20px 2px 0px;
+    margin-top: 36px;
+    color:rgb(102, 199, 186)
+}
+.menu_colums_item {
+    padding: 0px;
+    margin: 10px 10px 10px 10px;
+
+}
+
+.Danhmuc {
+    font-size: 1.4rem;
+    border-bottom: rgba(14, 13, 13, 0.932) 3px solid;
+    margin: 20px 10px 0 10px;
+
+}
+
+.menu_link {
+    color: black;
+    font-size: 120%;
+}
+
+.search {
+    width: 40px;
+    height: 36px;
+}
+
+.input_set {
+    display: flex;
+}
+
+.image_first {
+    margin: 0 40px;
+    margin-top: 90px;
+    width: 400px;
+    display: block;
+}
+
+.img0 {
+
+    height: 530px;
+    transition: transform 0.5s;
+    padding-right: 70px;
+}
+
+/* .img0:hover{
+    transform: scale(1.1);
+} */
+.img1 {
+
+    height: 220px;
+    transition: transform 0.5s;
+}
+
+/* .img1:hover {
+    transform: scale(1.1);
+    opacity: 0.5;
+} */
+
+.image {
+    margin-top: 30px;
+    display: flex;
+}
+
+.image2 {
+    display: flex;
+    margin-top: 10px;
+}
+
+.container_2 {
+    display: flex;
+    justify-content: center;
+}
+
+.container_main2_link {
+    margin: 0 24px;
+    text-decoration: none;
+    text-align: center;
+    width: 200px;
+}
+
+.tenmonan {
+
+
+    color: rgb(35, 52, 204);
+    text-decoration: none;
+
+}
+
+/* .tenmonan:hover {
+    transform: scale(1.1);
+} */
+
+.detail {
+    display: none;
+}
+
+.container_main2_link:hover .detail {
+    display: block;
+}
+
+.footer {
+    height: auto;
+    background-color: rgb(59, 192, 137);
+    margin-top: 50px;
+    display: flex;
+}
+
+.footer_content {
+    margin: 0 100px;
+}
+
+.khampha {
+    width: 200px;
+}
+
+.khampha_title {
+    color: white;
+    border-bottom: white 2px solid;
+}
+
+.nd {
+    text-decoration: none;
+    color: white;
+}
+
+.khampha_nd {
+    padding: 0px;
+}
+
+.footer_content3 {
+    margin-left: 100px;
+}
+
+.footer_content4 {
+    margin-left: 100px;
+
+}
+
+.container_main {
+    max-width: 905px;
+}
+
+.container1 {
+    background-color: rgb(26, 189, 121);
+    height: 50px;
+    margin: 50px 100px 0 100px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    border-radius: 9999px;
+}
+
+.dexuat {
+    font-size: 1.7rem;
+}
+
+.xemthem {
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    margin: 30px 0 0 0;
+}
+
+.xemthem_nd {
+    width: 800px;
+    color: black;
+    border: 2px solid;
+    height: 50px;
+    border-radius: 9999px;
+}
+
+
+
+.comment {
+    background-color: #d6fbdf;
+    box-shadow: #d6fbdf 0px 0px 8px;
+    /* margin-top: 60px; */
+    margin: 60px 100px 0 100px;
+
+}
+.nd_comment{
+    margin-top: 15px;
+    margin-left: 173px;
+}
+.input_comment {
+    /* border-bottom: 2px solid black; */
+    margin-top: 20px;
+    margin-left: 173px;
+    width: 820px;
+}
+
+.ip {
+    font-size: 1.4rem;
+    width: 812px;
+    background-color: #bbffbb;
+    outline: none;
+    height: 50px;
+}
+
+.huy {
+    display: flex;
+    margin: 20px 0px 20px 848px;
+}
+
+.nuthuy {
+    margin-right: 44px;
+    background-color: dimgray;
+    border: none;
+    border-radius: 9999px;
+    width: 50px;
+    height: 40px;
+    
+}
+
+.nuthuy:hover {
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+
+.nutcm {
+    background-color: dimgray;
+    border: none;
+    border-radius: 9999px;
+    width: 50px;
+    height: 40px;
+}
+
+.nutcm:hover {
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+.container_main{
+    margin-top: -45px;
+}
+.image_first_mini{
+    margin: 100px 100px 0 100px;
+    height: auto;
+    border: 1px solid darkgrey;
+    width: 800px;
+}
+.main_nd{
+    display: flex;
+    margin-left: 30px;
+    border-bottom: 1px solid;
+    margin-right: 30px;
+}
+.main_image{
+    margin-top: 10px;
+   
+}
+.main_tt{
+    margin: 0 24px 0 24px;
+    width: 500px;
+}
+.DocOnline{
+    height: 40px;
+    margin-top: 30px;
+}
+.DocOnline_button_read{
+    background-color: #31708f;
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 9999px;
+}
+.DocOnline_button_read:hover{
+cursor: pointer;
+background-color: blue;
+}
+.DocOnline_button_down:hover{
+    cursor: pointer;
+    background-color: green;
+    }
+.DocOnline_button_down{
+    margin-left: 10px;
+    width: 100px;
+    height: 30px;
+background-color: rgb(93, 192, 93);
+border: none;
+border-radius: 9999px;
+}
+.alear_info{
+    height: 40px;
+    color: #31708f;
+    background-color: #d9edf7;
+    border-radius:10px
+}
+.img0_mini{
+    width: 140px;
+    height: 214px;
+}
+.introduce_book{
+    margin-left: 30px;
+    margin-right: 30px;
+}

@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="library.css">
+    <link href='https://css.gg/search.css' rel='stylesheet'>
+    <link href='https://css.gg/search.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./assets/css/owl.theme.default.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body style="margin: 0px;">
+    <script>
+        const data = JSON.parse(localStorage.getItem('products'))
+
+    </script>
+    <div class="wrap">
+        <div class="header">
+            <div class="header_content">
+                <div class="header_name">
+                    <h1 class="title" id="">
+                        <a href="./index.html">
+                            <img src="https://www.library.dartmouth.edu/themes/custom/bootstrap_dcl/dartmouth-library-logo-square.png"
+                                alt="">
+                        </a>
+
+
+                    </h1>
+                </div>
+                <div class="header_item">
+                    <ul class="header_item_list">
+
+                        <a href="library.html" class="item_link">
+                            <li class="item">TRANG CHỦ</li>
+                        </a>
+
+                        <a href="./DanhMuc/danhsachbooks.html?vuaramat=1" class="item_link">
+                            <li class="item">VỪA RA MẮT</li>
+                        </a>
+                        <a href="./DanhMuc/danhsachbooks.html?docnhieu=1" class="item_link">
+                            <li class="item">ĐỌC NHIỀU NHẤT</li>
+                        </a>
+                        <a href="" class="item_link">
+                            <li class="item"><span class="selection">GÓC REVIEW </span>
+
+                            </li>
+
+
+                        </a>
+                        <!-- <a href="#lienhe" class="item_link">
+                            <li class="item">LIÊN HỆ</li>
+                        </a> -->
+                    </ul>
+
+                </div>
+                <div class="sign_in">
+                    <ul class="two_item">
+                        <li id="dangnhap" class="dn" style="margin-right: 25px; list-style: none;"><a href=""
+                                class="dndk_link" style="color: white;">Đăng nhập</a></li>
+                        <li class="dk" style="margin-right: 25px; list-style: none;"><a href="" class="dndk_link"
+                                style="color: white;">Đăng kí</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="banner">
+            <div class="banner_content">
+                <div class="banner_content_title">
+
+                    <h2>Library - Đọc Sách Online</h2>
+                </div>
+                <hr>
+                <div class="banner_content_nd">
+                    <h4>Sách ebook được sưu tầm từ internet, Bản Quyền thuộc về Tác giả & Nhà xuất bản, Library không
+                        sở hữu bất kỳ tài liệu nào. Hãy chia sẻ tri thức đến mọi người. Nếu Bạn có điều kiện, Hãy mua
+                        sách giấy để ủng hộ Tác giả và Nhà xuất bản.</h4>
+                    <br>
+                </div>
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="container_colums">
+                <div class="menu">
+                    <div class="input_set">
+                        <form action="./DanhMuc/danhsachbooks.html" method="get">
+                            <input type="text" name="search" id="" class="input" placeholder="Tìm kiếm">
+                            <button class="search" type="submit">
+                                <i class="gg-search" style="margin-left: 3p\x;"></i>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="menu_colums">
+                        <h3 class="Danhmuc">DANH MỤC</h3>
+                        <ul class="menu_colums_item list_danhmuc">
+
+                            <script>
+                                const listCate = document.querySelector('.list_danhmuc');
+                                const categorys = JSON.parse(localStorage.getItem('categorys'))
+                                categorys.map((item, index) => {
+                                    const newDiv = document.createElement("li");
+                                    newDiv.classList.add('menu_item');
+                                    newDiv.setAttribute('keys', index)
+                                    newDiv.innerHTML += `
+                                     <a href="../DanhMuc/danhsachbooks.html?categoryID=${item.id}" 
+                                        class="menu_link">${item.name}</a>`;
+                                    console.log(newDiv)
+                                    listCate.appendChild(newDiv)
+                                })
+                            </script>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <div class="container_main">
+
+                <div class="owl-carousel">
+                    <div class="image_first">
+                        <a href="./detail/detail_book.html?id=2"><img
+                                src="https://drive.google.com/uc?export=view&id=14dO5dFFIVh3jCvbtTpIM1nF3bbmzdhjl"
+                                alt="" class="img0"></a>
+                    </div>
+                    <div class="image_first">
+                        <a href="./detail/detail_book.html?id=39"><img
+                                src="https://drive.google.com/uc?export=view&id=10OXv5RS_PvmJZBcThqpZuZGhxbZp23XG"
+                                alt="" class="img0"></a>
+                    </div>
+                    <div class="image_first">
+                        <a href="./detail/detail_book.html?id=13"><img
+                                src="https://salt.tikicdn.com/cache/w1200/media/catalog/product/m/e/messi1.jpg" alt=""
+                                class="img0"></a>
+                    </div>
+                    <div class="image_first">
+                        <a href="./detail/detail_book.html?id=25"><img
+                                src="https://drive.google.com/uc?export=view&id=1_zX0kiyvOgflEwB1nJWtHlp_omNAxdC9"
+                                alt="" class="img0"></a>
+                    </div>
+                    <div class="image_first">
+                        <a href="./detail/detail_book.html?id=11"><img
+                                src="http://listsach.com/wp-content/uploads/2019/08/code-dao-ki-su-sach-hay-it.jpg"
+                                alt="" class="img0"></a>
+                    </div>
+                    <div class="image_first">
+                        <a href="./detail/detail_book.html?id=12"><img
+                                src="http://listsach.com/wp-content/uploads/2019/08/sach-gian-diep-mang-sach-hay-ve-it-lap-trinh-cong-nghe.jpg"
+                                alt="" class="img0"></a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="colums2">
+            <div class="colums2_nd">
+                <div class="DanhNgonHay">
+                    <div class="DanhNgonHay_title">
+                        <h2 class="DanhNgonHay_title_nd">Danh ngôn hay</h2>
+                    </div>
+                    <div class="DanhNgonHay_nd">
+                        <p class="DanhNgonHay_nd_main">Mắt ta chỉ nhìn thấy những gì mà trí óc đã sẵn sàng để lĩnh hội.
+                            -The eye sees only what the mind is prepared to comprehend.</p>
+                        <div class="DanhNgonHay_name">Robertson Davies</div>
+                    </div>
+                    <div class="DanhNgonHay_nd">
+                        <p class="DanhNgonHay_nd_main">Để hạnh phúc, chúng ta không được để tâm quá nhiều đến người
+                            khác.-To be happy, we must not be too concerned with others.</p>
+                        <div class="DanhNgonHay_name">Albert Camus
+
+                        </div>
+                    </div>
+                    <div class="DanhNgonHay_nd">
+                        <p class="DanhNgonHay_nd_main">Tất cả sự khôn ngoan của con người được tập hợp lại trong hai từ;
+                            chờ đợi và hy vọng.-All human wisdom is summed up in two words; wait and hope.</p>
+                        <div class="DanhNgonHay_name">Alexandre Dumas
+
+
+
+                        </div>
+                    </div>
+                    <div class="DanhNgonHay_nd">
+                        <p class="DanhNgonHay_nd_main">Em yêu anh cho đến tận cùng những chiều sâu, chiều rộng và chiều
+                            cao mà linh hồn em có thể vươn tới.-I love thee to the depth and breadth and height my soul
+                            can reach.</p>
+                        <div class="DanhNgonHay_name">Elizabeth Barrett Browning
+
+                        </div>
+                    </div>
+                    <div class="DanhNgonHay_nd">
+                        <p class="DanhNgonHay_nd_main">Cần ghi nhận rằng tình thương vĩ đại và các thành tựu to lớn
+                            thường dính líu đến các rủi ro lớn.-Take into account that great love and great achievements
+                            involve great risk.</p>
+                        <div class="DanhNgonHay_name">Dalai Lama
+
+
+
+                        </div>
+                    </div>
+                    <div class="DanhNgonHay_nd">
+                        <p class="DanhNgonHay_nd_main">Người thông minh không phải là người đọc nhiều mà là người hiểu
+                            được nhiều từ những điều đã đọc.</p>
+                        <div class="DanhNgonHay_name">Khuyết danh
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container_2">
+                <div class="container1">
+                    <Strong class="dexuat" style="color: white;" id="docnhieunhat">ĐỌC NHIỀU NHẤT</Strong>
+                </div>
+                <div class="container_main2 list_books list_docnhieu">
+                    <script src="../DanhMuc/library.js"></script>
+                    <script>
+                        const listBookDN = document.querySelector('.list_docnhieu');
+                        let i = 0;
+                        data.map((item, index) => {
+                            if (i < 12) {
+                                if (item.docnhieu === true) {
+                                    const newDiv = document.createElement("div");
+                                    newDiv.classList.add('item_book');
+                                    newDiv.setAttribute('keys', index)
+                                    newDiv.innerHTML += `
+                                <a href="./detail/detail_book.html?id=${item.id}" class="container_main2_link"> <img class="img1"
+                                        src="${item.img}"
+                                        alt="">
+                                    <p class="tenmonan">${item.name}</p>
+                                </a>`;
+                                    listBookDN.appendChild(newDiv)
+                                    i++
+                                }
+
+                            }
+                        })
+                    </script>
+                        <a href="" class="container_main2_link"> <img class="img1"
+                                src="https://drive.google.com/uc?export=view&id=1s0LqFVcTZGCgwYa_cTed9_XlYJ9l_hrR"
+                                alt="">
+                           
+                            <p class="tenmonan">Thám Tử Lừng Danh Conan bản đẹp Gosho</p>
+                        </a>
+                        <a href="" class="container_main2_link"> <img class="img1"
+                                src="https://nhasachmienphi.com/images/thumbnail/nhasachmienphi-bao-lua-u23-thuong-chau-tuyet-trang.jpg"
+                                alt="">
+                            <p class="tenmonan">Bão Lửa U23 – Thường Châu Tuyết Trắng </p>
+                        </a>
+                        <a href="" class="container_main2_link"><img img class="img1"
+                                src="https://nhasachmienphi.com/images/thumbnail/nhasachmienphi-ronaldo-am-anh-ve-su-hoan-hao.jpg"
+                                alt="">
+                            <p class="tenmonan">Ronaldo – Ám Ảnh Về Sự Hoàn Hảo </p>
+                        </a>
+                        <a href="" class="container_main2_link"><img img class="img1"
+                                src="https://nhasachmienphi.com/images/thumbnail/nhasachmienphi-ba-chang-ngoc.jpg"
+                                alt="">
+                            <p class="tenmonan">Ba Chàng Ngốc </p>
+                        </a>
+                    </div>
+                    <div class="image">
+                        <a href="" class="container_main2_link"> <img class="img1"
+                                src="https://nhasachmienphi.com/images/thumbnail/nhasachmienphi-ho-chi-minh-toan-tap.jpg"
+                                alt="">
+                            <p class="tenmonan">Hồ Chí Minh Toàn Tập</p>
+                        </a>
+                        <a href="" class="container_main2_link"> <img class="img1"
+                                src="https://nhasachmienphi.com/images/thumbnail/nhasachmienphi-tuoi-tho-du-doi.jpg"
+                                alt="">
+                            <p class="tenmonan">Tuổi Thơ Dữ Dội </p>
+                        </a>
+                        <a href="" class="container_main2_link"><img img class="img1"
+                                src="https://static.8cache.com/cover/eJwFwde2a0AAANAvsq5OHu4DUaOOEhkvs8iIllFCEF9_9n433D_QHTHVflM9CwkkvS_lsew2waNpr5IvsD8qJVBS-V3xHN0S5J3QYHFA5lqaq8NUDu05eHfh1KsiVOFprj_c5XYKxym231gb86Re5UXsyl30FZ11IfxGVcIZVyc60P3Fekfa8ZcTOchSxbFnTh_dgoEpSTpacsTlD2yYUtlrYhjI00oViyY2Lw55OgP4fFbnPNAbOSb0-qMdHNAxxoYBAh8Nbt6kcrot_nRD2kvfkTbDy_P-jg3vrgkbBvZcdQxMtIIhx27cn5_SaVZDuvb7x41DiQBoK-UJSu1DxdlAUxZDvbj2efWQcl-yI-r6eWHHui0zDf4mp-ECbpIO7uhBRdXDfsHly8IP7GHBKvKaugWl22TfNmE50cw0Pl7ORrwsxNzJt1EPgevH-dmy8V4ZfZqTeEilPrDSQUzY6D0z_NvVDkIHwfFsYzw9qkhuWP3bVxGNnIWdB3e0eAEFxSpXwF6XK_-4cIKPzZKXUtr6lcUwEZcwn9_onTmoRR6MN1mpqIiYhC5fQriZivZ9JCnIp3pDUBaGYsCd9-lN2rZ4hZb3PgaDPnD7dlxPsB0lQPVt4E_LurNWMgnq2hWNjohz4VRBo4h0CGtNeaogE8jCkLSfiBY2b_-_0H9xS9OP/chiec-bat-lua-va-vay-cong-chua.jpg"
+                                alt="">
+                            <p class="tenmonan">Chiếc bật lửa và váy công chúa </p>
+                        </a>
+                        <a href="" class="container_main2_link"><img img class="img1"
+                                src="https://nhasachmienphi.com/images/thumbnail/nhasachmienphi-7-vien-ngoc-rong-dragon-ball.jpg"
+                                alt="">
+                            <p class="tenmonan">7 Viên Ngọc Rồng – Dragon Ball</p>
+                        </a>
+                    </div>
+                    <div class="image">
+                        <a href="" class="container_main2_link"> <img class="img1"
+                                src="https://static.8cache.com/cover/eJzLyTDWD_ONDLFIKy0sSsnwNjIrz6kyNCtzjc8JNQjJzDezNCqrMg1zDfKsKI2wCK4MTXWryk4NSbOojMj1ybYwzXIPyvFPMS3IDTfy8cwrLHQxS4nIKLctNzI01c0wNjICADBmIAk=/canh-dong-hoang-vu-toi-nghe-noi.jpg"
+                                alt="">
+                            <p class="tenmonan">Cánh Đồng Hoang Vu - Tôi Nghe Nói</p>
+                        </a>
+                        <a href="" class="container_main2_link"> <img class="img1"
+                                src="https://nhasachmienphi.com/images/thumbnail/nhasachmienphi-naruto.jpg" alt="">
+                            <p class="tenmonan">Naruto</p>
+                        </a>
+                        <a href="" class="container_main2_link"><img img class="img1"
+                                src="https://nhasachmienphi.com/images/thumbnail/nhasachmienphi-messi-tu-el-pulga-den-mot-huyen-thoai.jpg"
+                                alt="">
+                            <p class="tenmonan">Messi – Từ El Pulga Đến Một Huyền Thoại</p>
+                        </a>
+                        <a href="" class="container_main2_link"><img img class="img1"
+                                src="https://nhasachmienphi.com/images/thumbnail/nhasachmienphi-diu-dang-danh-rieng-em.jpg"
+                                alt="">
+                            <p class="tenmonan">Dịu Dàng Dành Riêng Em</p>
+                        </a>
+                    </div> -->
+                </div>
+                <div class="xemthem">
+                    <a href="" class="xemthem_h xemthem_nd"><strong>
+                            <p>Xem tất cả</p>
+                        </strong></a>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            function removeAllChildNodes(parent) {
+                while (parent.firstChild) {
+                    parent.removeChild(parent.firstChild);
+                }
+            }
+            const btn_hot = document.querySelector('.xemthem_h');
+            btn_hot.addEventListener('click', (e) => {
+                removeAllChildNodes(listBookDN);
+                data.map((item, index) => {
+                    if (item.docnhieu === true) {
+                        const newDiv = document.createElement("div");
+                        newDiv.classList.add('item_book');
+                        newDiv.setAttribute('keys', index)
+                        newDiv.innerHTML += `
+                                <a href="./detail/detail_book.html?id=${item.id}" class="container_main2_link"> <img class="img1"
+                                        src="${item.img}"
+                                        alt="">
+                                    <p class="tenmonan">${item.name}</p>
+                                </a>`;
+                        listBookDN.appendChild(newDiv)
+                        i++
+                    }
+                })
+                e.preventDefault();
+            })
+        </script>
+        <div class="colums2">
+
+            <div style="width:90%" class="container_2">
+                <div class="container1">
+                    <Strong class="dexuat" style="color: white;" id="docnhieunhat">VỪA RA MẮT</Strong>
+                </div>
+                <div class="container_main2 list_books list_vuaramat">
+                    <script src="../DanhMuc/library.js"></script>
+                    <script>
+
+
+                        const listBookVrMs = document.querySelector('.list_vuaramat');
+                        i = 0;
+                        data.map((item, index) => {
+                            if (i < 8) {
+                                if (item.vuaramat === true) {
+                                    const newDiv = document.createElement("div");
+                                    newDiv.classList.add('item_book_vrm');
+                                    newDiv.setAttribute('keys', index)
+                                    newDiv.innerHTML += `
+                                <a href="./detail/detail_book.html?id=${item.id}" class="container_main2_link"> <img class="img1"
+                                        src="${item.img}"
+                                        alt="">
+                                    <p class="tenmonan">${item.name}</p>
+                                </a>`;
+                                    listBookVrMs.appendChild(newDiv)
+                                    i++
+                                }
+
+                            }
+                        })
+                    </script>
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="xemthem">
+            <a href="" class="xemthem_dn xemthem_nd"><strong>
+                    <p>Xem tất cả</p>
+                </strong></a>
+        </div>
+        <script>
+            const btn_viewall = document.querySelector('.xemthem_dn');
+            btn_viewall.addEventListener('click', (e) => {
+                removeAllChildNodes(listBookVrMs);
+                data.map((item, index) => {
+                    if (item.vuaramat === true) {
+                        const newDiv = document.createElement("div");
+                        newDiv.classList.add('item_book');
+                        newDiv.setAttribute('keys', index)
+                        newDiv.innerHTML += `
+                                <a href="./detail/detail_book.html?id=${item.id}" class="container_main2_link"> <img class="img1"
+                                        src="${item.img}"
+                                        alt="">
+                                    <p class="tenmonan">${item.name}</p>
+                                </a>`;
+                        listBookVrMs.appendChild(newDiv)
+                        i++
+                    }
+
+
+                })
+                e.preventDefault();
+            })
+        </script>
+
+
+        <div class="comment">
+            <div class="nd_comment">
+                <strong class="" style="font-size: 1.5rem;">Bình luận:</strong>
+            </div>
+            <div class="input_comment">
+                <input type="text" class="ip" placeholder="Viết bình luận...">
+            </div>
+            <div class="huy">
+                <button class="nuthuy">Hủy</button>
+                <button class="nutcm">Bình luận</button>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer_content">
+                <div class="khampha">
+                    <p class="khampha_title" id="lienhe">Khám phá</p>
+                </div>
+                <div class="khampha_content">
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Ứng dụng Mobile</a></li>
+                    </ul>
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Viết bình luận</a></li>
+                    </ul>
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Tạo bộ sưu tập</a></li>
+                    </ul>
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Phần thưởng</a></li>
+                    </ul>
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Bảo mật thông tin</a></li>
+                    </ul>
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Quy định</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer_content2">
+                <div class="khampha">
+                    <p class="khampha_title">Công ty
+                    </p>
+                </div>
+                <div class="khampha_content">
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Giới thiệu
+                            </a></li>
+                    </ul>
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Trợ giúp</a></li>
+                    </ul>
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Việc làm</a></li>
+                    </ul>
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Góp ý</a></li>
+                    </ul>
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Quy chế</a></li>
+                    </ul>
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Liên hệ</a></li>
+                    </ul>
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Thỏa thuận sử dụng dịch vụ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer_content3">
+                <div class="khampha">
+                    <p class="khampha_title">Tham gia trên</p>
+                </div>
+                <div class="khampha_content">
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Facebook</a></li>
+                    </ul>
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Instagram</a></li>
+                    </ul>
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Youtube</a></li>
+                    </ul>
+                    <ul class="khampha_nd">
+                        <li class="khampha_nd_content"><a href="" class="nd">Google</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer_content4">
+                <div class="khampha">
+                    <p class="khampha_title">Ứng dụng</p>
+                </div>
+                <div class="khampha_content">
+                    <div class="app_link">
+                        <div>
+                            <a href="" class="link_appstore">
+                                <img style="width: 100px; height: 34px;"
+                                    src="https://www.nicepng.com/png/full/235-2356931_published-inapp-google-play-logo-and-app-store.png"
+                                    alt="" class="appstore">
+                            </a>
+                        </div>
+                        <div style="margin-top: 10px;">
+                            <a href="" class="link_chplay">
+                                <img style="width: 100px;"
+                                    src="https://www.pngkit.com/png/full/6-67536_download-google-play-png-picture-freeuse-library-google.png"
+                                    alt="" class="chplay">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function () {
+        $(".owl-carousel").owlCarousel({
+            items: 2,
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 4000,
+        });
+    });
+</script>
+<script src="./DanhMuc/data.js"></script>
+
+</html>
